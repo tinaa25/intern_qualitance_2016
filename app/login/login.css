@@ -44,20 +44,15 @@ form {
     font-size: 20px;
     padding: 80px;
 }
-.account-info {
+input[type=email] {
     width: 50%;
-    height: 50%;
-    margin: auto;
-}
-input[type=text] {
-    width: 70%;
     padding: 12px 20px;
     margin: 8px 0;
     display: block;
     border: 1px solid #ccc;
 }
 input[type=password] {
-    width: 70%;
+    width: 50%;
     padding: 12px 20px;
     margin: 8px 0;
     display: block;
@@ -72,14 +67,13 @@ button {
     padding: 14px 20px;
     border-radius: 25px;
 }
-.container {
-    padding: 16px;
-    width: 50%;
-    margin: auto;
-}
+
 button:hover {
     background-color: #3cb0fd;
     text-decoration: none;
+}
+.container {
+  text-align: center;
 }
 span.psw {
     float: right;
@@ -91,6 +85,7 @@ span.psw {
     padding: 0 20px;
     text-align: center;
 }
+
 
 /* Change styles for span and cancel button on extra small screens */
 

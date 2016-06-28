@@ -9,9 +9,7 @@ section {
 #hero-banner a {
     color: white;
 }
-#header #nav {
-    float: right;
-}
+
 #header {
     overflow: hidden;
     height: 90px;
@@ -41,6 +39,11 @@ section {
     color: #fff;
     background-color: transparent;
     border-color: wheat;
+    text-align: center;
+}
+#banner-text{
+  text-align: center;
+  padding: 10px;
 }
 #section-one {
     background-color: #80d4ff;
@@ -55,6 +58,7 @@ section {
     font-size: 20px;
     color: white;
 }
+
 .col-inline {
     margin: 0 50px;
     display: inline-block;
@@ -75,39 +79,32 @@ section {
     margin-left: -25px;
     margin-top: -25px;
 }
-.container {
-    width: 80%;
-    margin: auto;
-    display: block;
-    box-sizing: border-box;
-}
-.col {
+/*.col {
     width: 33.33%;
     float: left;
-
     padding: 10px;
-}
-.col img {
+} */
+.img-col img{
   width: 100%;
+  margin-bottom: 10px;
+}
+.img-col img {
+  width: 100%;
+  float: left;
+  padding: 10px;
 }
 
-.col a:hover {
+.img-col a:hover {
   transform: scale(1.1);
   opacity: 0.5;
 }
-.col a{
+.img-col a{
   display: block;
   transition: all 0.2s ease-in-out;
 }
-.clearfix:after {
-     visibility: hidden;
-     display: block;
-     font-size: 0;
-     content: " ";
-     clear: both;
-     height: 0;
-     }
-   #section-two {
+
+
+#section-two {
          background-color: #330000 ;
          color: white;
          overflow: auto;
