@@ -2,15 +2,85 @@
 <html>
 
 <head>
-  <title> Register </title>
-</head>
-<body>
-<p> <p>In irure in et eu ipsum laboris do ea. Aliquip ea id proident sint fugiat fugiat ipsum excepteur dolor nostrud cupidatat elit. Nulla consequat elit pariatur velit ad laboris consectetur consectetur excepteur irure est ipsum id pariatur nisi sint enim. Eiusmod anim et consectetur deserunt aute veniam irure culpa qui officia in. Elit eu id labore deserunt commodo ea ex non id ex.</p>
-<p>Eu qui aute laborum pariatur tempor dolor veniam adipisicing duis in. Culpa velit velit qui ut sint exercitation quis in id in. Cillum aliqua excepteur id enim commodo magna dolor commodo dolor enim.</p>
-<p>Aliquip duis laborum sunt anim minim sint dolor. Enim anim sunt ipsum proident adipisicing laborum sit minim velit nostrud aliquip sint. Enim ullamco et laborum ea eiusmod nisi ad irure magna qui. Minim aliquip cillum culpa sit excepteur ut aute esse deserunt consequat cupidatat irure est Lorem nulla consectetur sint. Aliqua sint excepteur aute minim ullamco officia id labore commodo nostrud.</p>
-<p>Ea id magna dolore non minim et nisi aliqua dolore quis commodo magna officia est. Aliquip culpa ex aute excepteur eiusmod Lorem cillum minim culpa cillum ipsum cupidatat reprehenderit sit ad incididunt tempor. Aliqua officia adipisicing deserunt minim dolore sint cillum incididunt aliqua culpa irure. Reprehenderit dolore deserunt esse ipsum ipsum enim velit quis elit consequat enim eu ad excepteur. Aute ipsum sit reprehenderit ut sunt duis occaecat ex adipisicing non enim incididunt. Enim proident fugiat sit ullamco irure laborum deserunt.</p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+    <title> Registration</title>
+    <style></style>
+    <link rel="stylesheet" type="text/css" href="../assets/fonts/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="../assets/normalize/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="register.css">
 
-</body>
+    </header>
+
+    <body>
+        <div id="content">
+            <section id="banner">
+                <header>
+                    <h1><a href="../index.html">QShop</h1></a>
+                    <nav id="meniu">
+
+                        <ul>
+
+                            <li> <a href="about/about.html">About</a> </li>
+                            <li> <a href="about/contact.html">Contact</a></li>
+                            <li> <a href="login/login.html">Login</a> </li>
+                        </ul>
+
+                    </nav>
+                </header>
+            </section>
 
 
-</html>
+            <div id="container" class="container">
+                <div class="row col-xs-12 col-sm-6 col-md-4">
+
+
+                    <form method="post" role="form">
+                        <fieldset>
+                            <h2>Register</h2>
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <div class="input-group">
+
+                                    <input class="form-control" id="username" required type="text" placeholder="Insert username">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email"> Email</label>
+
+                                <input id="email" class="form-control" required type="email" placeholder="Insert email">
+
+                            </div>
+
+                            <div class="form-group">
+                                <label for="pass">
+                                    Password</label>
+
+                                <input id="pass" class="form-control" required type="password" placeholder="Insert password">
+
+                            </div>
+
+                            <div class="form-group">
+                                <label for="confpass">
+                                    Confirm Password</label>
+
+                                <input id="confpass" class="form-control" required type="password" placeholder="Confirm password">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-default" name="submit" value="Register">
+                                <label>
+                            </div>
+
+                        </fieldset>
+                    </form>
+                </div>
+
+            </div>
+            <footer id="footer">
+                <strong>  Copyright2016 </strong>
+                <a href="#top"><i class="fa fa-arrow-circle-o-up fa-2x" aria-hidden="true"></i></a>
+            </footer>
+
+
+    </body>
