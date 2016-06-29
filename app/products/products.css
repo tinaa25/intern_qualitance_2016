@@ -1,0 +1,91 @@
+#hero-banner {
+    background: linear-gradient(#99CCFF, #CCFFFF);
+    height: 200px;
+    width: 100%;
+}
+#hero-banner h1 {
+    text-align: center;
+    padding-top: 75px;
+}
+#section-one {
+    background-color: white;
+    text-align: center;
+    height: auto;
+    margin-bottom: 10px;
+}
+.salebadge{
+    width: 50px;
+    background-color: #ff5c33;
+    color: white;
+    border-radius: 90%;
+    position: absolute;
+    margin-right: -10px;
+    margin-top: -22px;
+    z-index: 10;
+    right: 0;
+}
+
+.salebadge h4{
+  padding-left: 5px;
+}
+
+ .add-to-cart {
+  opacity: 0;
+  position: absolute;
+  background-color: black;
+  color: white;
+  width: 100%;
+  z-index: 9;
+
+}
+.col-image:hover .add-to-cart{
+  opacity: 1;
+  width: 100%;
+}
+.wrapper{
+  position: relative;
+}
+.col-image img {
+    width: 100%;
+    position: relative;
+    height: auto;
+    margin-bottom: 20px;
+    padding-top: 10px;
+}
+.card {
+    background-color: #F8F8FF;
+    box-shadow: 7px 7px 5px #A9A9A9;
+    border-radius: 10px;
+}
+.card-block {
+    padding-right: 10px;
+}
+.container img {
+    transition: width 0.2s, height 0.4s;
+}
+.container img:hover {
+  transform: scale(1.1);
+}
+.container-two img {
+    width: 100px;
+    box-shadow: 7px 7px 5px #A9A9A9;
+    border-radius: 3px;
+}
+.ul {
+    padding: 0px;
+    list-style: none;
+}
+}
+.card-lateral {
+    padding-right: 10px;
+  }
+
+  #footer-section{
+      text-align: center;
+      background-color:cream;
+
+  }
+  #back-to-top:hover{
+        transform: rotate(360deg);
+
+  }
