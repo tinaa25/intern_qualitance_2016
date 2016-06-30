@@ -1,0 +1,26 @@
+#hero-banner {
+    background: linear-gradient(#99CCFF, #CCFFFF);
+    height: 200px;
+    width: 100%;
+}
+
+.product-name {
+  padding-top: 10px;
+}
+.btn-group .color {
+  background-color: #ff5c33
+
+}
+
+#tab-content {
+  margin-top: 50px;
+  float: left;
+  background-color: red;
+}
+
+.table-border {
+  width: 100%;
+  background-color: #ff5c33;
+  border: 5px solid black;
+
+}
