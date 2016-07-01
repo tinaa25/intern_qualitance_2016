@@ -29,7 +29,6 @@
 #hero-banner {
     background-color: #0086b3;
     background-size: cover;
-    height: 500px;
     margin: 0;
 }
 #banner-text h1 {
@@ -37,9 +36,14 @@
     color: white;
     font-weight: normal;
     text-align: center;
+
 }
+#banner-text {
+  background-color: #0086b3;
+}
+
 form {
-    border: 3px solid #f1f1f1;
+
     background-size: 50px;
     font-size: 20px;
     padding: 80px;

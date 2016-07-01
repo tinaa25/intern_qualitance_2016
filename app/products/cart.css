@@ -1,0 +1,24 @@
+.title{
+  padding-top: 100px;
+      padding-left: 100px;
+      }
+.table .image {
+  width: 100px;
+  height: 100px;
+}
+
+.city input[type="text"] {
+                      width:150px;
+                        border-radius: 10px;
+                        }
+
+.zipcode input[type="text"] {
+                      margin-left: -100px;
+                      width:150px;
+                      border-radius: 10px;
+                        }
+  .update-cart button[type="button"]{
+                width: 100px;
+                float: right;;
+                margin-top:10px;
+            }

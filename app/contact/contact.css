@@ -6,13 +6,12 @@
 }
 #header {
     overflow: hidden;
-    height: 90px;
+
     padding: 0 20px;
     background-color: black;
     text-align: center;
 }
 #hero-banner #title h2 {
-    text-align: center;
     height: 90px;
     padding-left: 20px;
     float: left;
@@ -31,7 +30,6 @@
 #hero-banner {
     background-color: #80d4ff;
     background-size: cover;
-    
     margin: 0;
 }
 #banner-text h1 {
@@ -41,12 +39,7 @@
     text-align: center;
     height:20%
 }
-#losection{
-  background-color: #80d4ff;
-  color: white;
-  overflow: auto;
-  padding: 30px 20px
-}
+
 
 form {
     background-size: 50px;
@@ -63,12 +56,9 @@ input[type=text] {
 input[type=email] {
     width: 70%;
     padding: 12px 20px;
-    margin: 8px 0;
+
     display: block;
     border: 1px solid #ccc;
-}
-input:required {
-    border: 2px solid blue;
 }
 
 
@@ -92,7 +82,7 @@ span.message {
     margin-left: 20px;
     display:block;
 }
-#footer {
+#footer-section {
     font-size: 40px height: 90px;
     padding: 0 20px;
     text-align: center;

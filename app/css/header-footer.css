@@ -1,0 +1,46 @@
+#banner a {
+    color: white;
+}
+#header #nav {
+    float: right;
+}
+#header {
+    overflow: hidden;
+    height: 90px;
+    padding: 0 20px;
+    background-color: black;
+    text-align: center;
+}
+#hero-banner #title h2 {
+    height: 90px;
+    padding-left: 20px;
+    float: left;
+    position: fixed;
+    color: white;
+}
+#header #nav ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 6px;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+}
+#hero-banner {
+    background-color: #80d4ff;
+    background-size: cover;
+    margin: 0;
+}
+#banner-text h1 {
+    font-size: 50px;
+    color: white;
+    font-weight: normal;
+    text-align: center;
+    height:20%
+}
+
+#footer-section {
+    font-size: 40px height: 90px;
+    padding: 0 20px;
+    text-align: center;
+}
