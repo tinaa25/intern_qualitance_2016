@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title> JS Bin </title>
+    <script>
+        function student(nume, prenume) {
+            this.nume = nume;
+            this.prenume = prenume;
+        }
+        student.prototype.getFullName = function() {
+            return this.nume + ' ' + this.prenume;
+        }
+
+        var a = new student('tina', 'dunca');
+        console.log(a.getFullName());
+
+
+        /*function sum(a, b) {
+               if (b == undefined) {
+                   b = 0;
+
+               }*/
+
+        /*  b=b || 0;
+              return a + b;
+          }
+          var a = 1;
+          console.log(sum(a));
+          console.log(sum(a, true));
+          console.log(sum(a, false));
+          console.log(sum(a, ''));
+          console.log(sum(a, null));
+          console.log(sum(a, 5));*/
+
+        /*   var b=[1, 2, 3];
+           console.log(b instanceof Array);*/
+        /* delete b[1];*/
+        /* for (var i=0; i<b.length; i++){
+           console.log(b[i]);
+         }*/
+
+        /*             b.cevaa='altcevaa'
+                     for (var x in b){
+                       console.log(x);
+                     }
+                     console.log(typeof b);*/
+
+        var b = {
+            0: 1,
+            1: 2,
+            2: 3,
+            length: 3
+
+        };
+
+        console.log(Array.isArray(b));
+        for (var i = 0; i < b.length; i++) {
+            //break and continue
+            if (i == 1) {
+                var b4 = 2;
+                continue;
+            }
+            //console.log(b[i]);
+            console.log(b4);
+        }
+
+        //callback
+
+                function sum(a, b, callback) {
+                    var result = a + b;
+                    setTimeout(function() {
+                        callback(result)
+                    }, 500)
+                }
+                sum(1, 2, function(r) {
+
+                        console.log(r)
+                    })
+                  sum(1,2, alert))
+
+                console.log('test');
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

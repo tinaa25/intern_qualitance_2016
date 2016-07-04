@@ -17,7 +17,8 @@
                       width:150px;
                       border-radius: 10px;
                         }
-  .update-cart button[type="button"]{
+
+  .update-cart button[type="button"] {
                 width: 100px;
                 float: right;;
                 margin-top:10px;
