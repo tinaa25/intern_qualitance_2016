@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title> JS Bin </title>
-    <script>
-        function student(nume, prenume) {
+
+        <!-- function student(nume, prenume) {
             this.nume = nume;
             this.prenume = prenume;
         }
@@ -47,7 +47,7 @@
                        console.log(x);
                      }
                      console.log(typeof b);*/
-
+/*
         var b = {
             0: 1,
             1: 2,
@@ -69,23 +69,107 @@
 
         //callback
 
-                function sum(a, b, callback) {
-                    var result = a + b;
-                    setTimeout(function() {
-                        callback(result)
-                    }, 500)
-                }
-                sum(1, 2, function(r) {
+        function sum(a, b, callback) {
+            var result = a + b;
+            setTimeout(function() {
+                callback(result)
+            }, 500)
+        }
+        sum(1, 2, function(r) {
 
-                        console.log(r)
-                    })
-                  sum(1,2, alert))
+            console.log(r)
+        })
 
-                console.log('test');
-    </script>
+        sum(1, 2, alert)
+
+        console.log('test'); */
+-->
+
 </head>
 
 <body>
+    /* day 2*/
+
+                <div id="content">
+                    <p> Hello! </p>
+                    <span> I am a span. </span>
+                    <ul>
+                        <li> 1</li>
+                        <li> 2</li>
+                        <li> 3</li>
+                        <li> 4</li>
+                    </ul>
+                    <div class="container">
+                        <div id="div1" class="div"> <span> 1</span> </div>
+                        <div id="div2" class="div"> <span> 2</span> </div>
+                        <div id="div3" class="div"> <span>3 </span> </div>
+                    </div>
+                    <div class="container">
+                        <div id="div4" class="div"> <span> 4</span> </div>
+                        <div id="div5" class="div"> <span> 6</span> </div>
+                        <div id="div6" class="div"> <span>7</span> </div>
+                    </div>
+
+                  </div>
+
+
+
+
+                  <script>
+                  //console.log(document.getElementById('d').innerHTML);
+                 // console.log(document.getElementById('content'));
+                // console.log(document.getElementsByClassName('content'));
+                  console.log(document.querySelector('div'));
+                /* return all elementents din ul cu li */
+                  console.log(document.querySelectorAll('div ul>li'));
+                  console.log(document.querySelectorAll('div ul>li.list'));
+
+
+
+              /*  var elements= document.querySelectorAll('.container>div:first-child');
+                    for (var i=0; i < elements.length; i++)
+                    {
+                        console.log(elements[i].innerHTML);
+
+                    } */
+
+
+                        var elements = document.querySelectorAll('div.container');
+                        var i=0;
+                         while (elements[i]) {
+                           var child = elements[i].firstChild;
+
+                           do{
+                          /*   console.log(child.nodeName);
+                             console.log(child.innerHTML);
+                            console.log(child.nodeValue);*/
+                            console.log(child.nodeValue || child.innerHTML);
+
+                           }
+                           while (child=child.nextSibling)
+                           i++;
+                         }
+
+                         <!-- last ex -->
+                         (function () {
+
+                         var element = document.querySelectorAll('#content ul');
+                         var size = element.querySelectorAll('li').length;
+                         var newNode = document.createElement('li');
+
+                         for (var i=1; i<=size; i++) {
+
+                            newNode.innerHTML= i + size;
+                            element.appendChild(newNode);
+                         }
+                       }) ();
+
+
+
+
+
+              </script>
+
 </body>
 
 </html>
