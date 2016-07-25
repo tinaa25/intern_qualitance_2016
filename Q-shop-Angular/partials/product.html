@@ -1,0 +1,83 @@
+
+<section class="single-product">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+
+                    </div>
+
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="product-summary">
+                    <h2></h2>
+
+                    <div class="review-number">
+                        <span class="review-count">1</span> review(s)
+                    </div>
+                    <p class="price"></p>
+
+                    <p class="description">
+
+                    </p>
+
+                    <form method="post" class="add-to-cart">
+                        <div class="row">
+                            <div class="quantity clearfix col-xs-6 col-sm-6 col-md-4">
+                                <input type="button" class="minus" value="-" >
+                                <input type="number" class="input-text qty text" title="Qty" value="1" id="qty" name="quantity">
+                                <input type="button" class="plus" value="+" >
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-3">
+                                <button type="button" class="btn btn-primary" id="addToCart">Add to cart</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="tabs">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs"  role="tablist">
+                <li role="presentation" class="active"><a href="#description" aria-controls="description" role="tab" data-toggle="tab">Description</a></li>
+                <li role="presentation"><a href="#specifications" aria-controls="specifications" role="tab" data-toggle="tab">Specifications</a></li>
+                <li role="presentation"><a href="#reviews" aria-controls="reviews" role="tab" data-toggle="tab">Reviews</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="description">
+                    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sagittis, massa fringilla consequat blandit, mauris ligula porta nisi, non tristique enim sapien vel nisl. Suspendisse vestibulum lobortis dapibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent nec tempus nibh. Donec mollis commodo metus et fringilla. Etiam venenatis, diam id adipiscing convallis, nisi eros lobortis tellus, feugiat adipiscing ante ante sit amet dolor. Vestibulum vehicula scelerisque facilisis. Sed faucibus placerat bibendum. Maecenas sollicitudin commodo justo, quis hendrerit leo consequat ac.
+                    Proin sit amet risus sapien, eget interdum dui. Proin justo sapien, varius sit amet hendrerit id, egestas quis mauris.
+                </div>
+                <div role="tabpanel" class="tab-pane" id="specifications">
+                    <div class="table-responsive table-bordered">
+                        <table class="table">
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="reviews">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
