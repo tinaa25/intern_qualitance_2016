@@ -1,26 +1,30 @@
 <html ng-app="qshop">
+<html>
 
 <head>
     <title>Hi Summer Internship</title>
     <link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
     <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
-    <link rel="stylesheet" type="text/css" href="app.css">
-    <link rel="stylesheet" type="text/css" href="common.css">
-    <link rel="stylesheet" type="text/css" href="contact.css">
-    <link rel="stylesheet" type="text/css" href="products.css">
-    <link rel="stylesheet" type="text/css" href="login.css">
-    <link rel="stylesheet" type="text/css" href="register.css">
-
+    <link rel="stylesheet" type="text/css" href="/css/app.css">
+    <link rel="stylesheet" type="text/css" href="/css/common.css">
+    <link rel="stylesheet" type="text/css" href="/css/contact.css">
+    <link rel="stylesheet" type="text/css" href="/css/products.css">
+    <link rel="stylesheet" type="text/css" href="/css/login.css">
+    <link rel="stylesheet" type="text/css" href="/css/register.css">
+    <link rel="stylesheet" type="text/css" href="/css/product.css">
+    <link rel="stylesheet" type="text/css" href="/css/cart.css">
 
     <script src="assets/js/jquery-2.1.4.js"></script>
     <script src="assets/bootstrap/js/bootstrap.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js">
-    </script>
-    <script src="app.js">
-    </script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
+    <script src="app.js"></script>
+    <script src="/services/products.service.js"></script>
+    <script src="/services/cart.service.js"></script>
+    <script src="/controllers/products.controller.js"></script>
+    <script src="/controllers/product.controller.js"></script>
+    <script src="/controllers/cart.controller.js"></script>
 </head>
 
 <body id="top">
@@ -33,16 +37,19 @@
                         <button type="button" data-target="#myNavbar" data-toggle="collapse" class="btn btn-default btn-lg navbar-toggle">
                             <span class="glyphicon glyphicon-menu-hamburger " aria-hidden="true"></span>
                         </button>
-                        <a href="index.html" class="navbar-brand">QShop</a>
+                        <a href="/#/" class="navbar-brand">QShop</a>
 
                     </div>
                     <!-- Collection of nav links and other content for toggling -->
                     <div id="myNavbar" class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
+
+                            <li><a href="#/contact">Contact</a></li>
+                            <li><a href="about/about.html">About</a></li>
+                            <li><a href="#/login">Login</a></li>
                             <li><a href="/#/products">Shop</a></li>
-                            <li><a href="/#/contact">Contact</a></li>
-                            <li><a href="/#/about">About</a></li>
-                            <li><a href="/#/login">Login</a></li>
+                            <li><a href="#/cart"> <span class="badge" style="margin-right: 5px">0 </span> Cart</a></li>
+
                         </ul>
                     </div>
                 </div>
@@ -57,6 +64,7 @@
         <div class="back-to-top">
             <a href="#top"><i class="fa fa-arrow-circle-o-up fa-3x"></i></a>
         </div>
+
     </footer>
 </body>
 
