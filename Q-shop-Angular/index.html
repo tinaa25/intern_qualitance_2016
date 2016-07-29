@@ -22,9 +22,13 @@
     <script src="app.js"></script>
     <script src="/services/products.service.js"></script>
     <script src="/services/cart.service.js"></script>
+    <script src="/services/contact.service.js"></script>
+    
     <script src="/controllers/products.controller.js"></script>
     <script src="/controllers/product.controller.js"></script>
     <script src="/controllers/cart.controller.js"></script>
+    <script src="/controllers/menu.controller.js"></script>
+    <script src="/controllers/contact.controller.js"></script>
 </head>
 
 <body id="top">
@@ -41,14 +45,14 @@
 
                     </div>
                     <!-- Collection of nav links and other content for toggling -->
-                    <div id="myNavbar" class="collapse navbar-collapse">
+                    <div id="myNavbar" class="collapse navbar-collapse" ng-controller = "MenuController">
                         <ul class="nav navbar-nav navbar-right">
 
                             <li><a href="#/contact">Contact</a></li>
                             <li><a href="about/about.html">About</a></li>
                             <li><a href="#/login">Login</a></li>
                             <li><a href="/#/products">Shop</a></li>
-                            <li><a href="#/cart"> <span class="badge" style="margin-right: 5px">0 </span> Cart</a></li>
+                            <li><a href="#/cart"><span class="badge" style="margin-right: 5px">{{totalProducts}}</span>Cart</a></li>
 
                         </ul>
                     </div>

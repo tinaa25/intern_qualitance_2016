@@ -1,4 +1,4 @@
-angular.module("qshop").factory("Cart", function() {
+angular.module("qshop").factory("Cart", function($rootScope) {
 
     var cart = {};
     cart.products = [];
@@ -16,21 +16,22 @@ angular.module("qshop").factory("Cart", function() {
 
         }
         if (existaProdus) {
-          //  console.log("Deja exista produsul. " + product.name);
+            //  console.log("Deja exista produsul. " + product.name);
             cart.products[index].quantity += quantity;
         } else {
             console.log(" Am adaugat produsul ", product);
             product.quantity = quantity;
             cart.products.push(product);
         }
+        $rootScope.$broadcast('cart-updated');
     };
 
     cart.getSubTotal = function() {
-      var sum = 0;
-      for (var i = 0; i < cart.products.length; i++) {
-        sum += cart.products[i].price * cart.products[i].quantity;
-      }
-          return sum;
+        var sum = 0;
+        for (var i = 0; i < cart.products.length; i++) {
+            sum += cart.products[i].price * cart.products[i].quantity;
+        }
+        return sum;
     };
 
 
@@ -38,15 +39,42 @@ angular.module("qshop").factory("Cart", function() {
         return cart.products;
 
     };
+    cart.getProductCount = function() {
+        var sum = 0;
+        for (var i = 0; i < cart.products.length; i++) {
+            sum += cart.products[i].quantity;
+        }
+        return sum;
+    };
 
     cart.getShipping = function() {
-      return 50;
+        return 50;
 
     };
     cart.getTotal = function() {
-      return this.getSubTotal() + this.getShipping()
+        return this.getSubTotal() + this.getShipping()
 
     };
+
+    cart.remove = function(product) {
+
+        var index = 0;
+
+        for (var i = 0; i < cart.products.length; i++) {
+            if (parseInt(cart.products[i].id) === parseInt(product.id)) {
+                index = i;
+
+                break;
+            }
+        }
+        cart.products.splice(index, 1);
+    };
+    cart.sendOrder = function(order) {
+        cart.products = [];
+        $rootScope.$broadcast('cart-updated');
+        console.log(" Am plasat comanda", order);
+
+    }
     return cart;
 
 });

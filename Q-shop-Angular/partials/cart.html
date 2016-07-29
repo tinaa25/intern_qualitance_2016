@@ -1,4 +1,4 @@
-<section class="main cart-main" ng-controller = "CartController">
+<section class="main cart-main" ng-controller="CartController">
     <div class="container">
         <h2>Shopping Cart</h2>
         <div class="row">
@@ -6,39 +6,42 @@
                 <form method="post">
                     <table class="table table-responsive cart-table">
                         <thead>
-                        <tr>
-                            <th> &nbsp;</th>
-                            <th>Product</th>
-                            <th>Price</th>
-                            <th>Quantity</th>
-                            <th>Total</th>
-                        </tr>
+                            <tr>
+                                <th> &nbsp;</th>
+                                <th>Product</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
+                                <th>Remove Items</th>
+                            </tr>
                         </thead>
                         <tbody>
-                        <tr class="cart-item" ng-repeat = "cartItem in cartList track by $index">
-                            <td class="product-image">
-                                <a href="#">
-                                    <img src="{{cartItem.picture}}"/>
-                                </a>
-                            </td>
-                            <td class="product-name">
-                                <a href="/#/product/{{cartItem.id}}">{{cartItem.name}}</a>
-                            </td>
-                            <td class="product-price">
-                              $ {{cartItem.price}}
-                            </td>
-                            <td class="product-quantity">
-                                <div class="quantity">
-                                    <input ng-click = "decrementQuantity(cartItem)" type="button" class="minus" value="-">
-                                    <input ng-model = "cartItem.quantity" type="number" class="input-text qty text" title="Qty" value="1"
-                                           name="quantity">
-                                    <input ng-click = "incrementQuantity(cartItem)" type="button" class="plus" value="+">
-                                </div>
-                            </td>
-                            <td class="product-total">
-                                <a href="#">${{cartItem.price * cartItem.quantity}}</a>
-                            </td>
-                        </tr>
+                            <tr class="cart-item" ng-repeat="cartItem in cartList track by $index">
+                                <td class="product-image">
+                                    <a href="#">
+                                        <img src="{{cartItem.picture}}" />
+                                    </a>
+                                </td>
+                                <td class="product-name">
+                                    <a href="/#/product/{{cartItem.id}}">{{cartItem.name}}</a>
+                                </td>
+                                <td class="product-price">
+                                    $ {{cartItem.price}}
+                                </td>
+                                <td class="product-quantity">
+                                    <div class="quantity">
+                                        <input ng-click="decrementQuantity(cartItem)" type="button" class="minus" value="-">
+                                        <input ng-model="cartItem.quantity" type="number" class="input-text qty text" title="Qty" value="1" name="quantity">
+                                        <input ng-click="incrementQuantity(cartItem)" type="button" class="plus" value="+">
+                                    </div>
+                                </td>
+                                <td class="product-total">
+                                    <a href="#">${{cartItem.price * cartItem.quantity}}</a>
+                                </td>
+                                <td>
+                                    <a href="" class="glyphicon glyphicon-remove" style="color: red;" ng-click="removeItem(cartItem)"></a>
+                                </td>
+                            </tr>
 
                         </tbody>
                     </table>
@@ -54,7 +57,7 @@
                             <div class="form-group">
                                 <div class="col-md-12 form-rows">
                                     <label>Country</label>
-                                    <select class="form-control" placeholder="Select a country">
+                                    <select class="form-control" placeholder="Select a country" ng-model="country">
                                         <option value="" disabled selected>Select your option</option>
                                         <option value="Romania">Romania</option>
                                         <option value="Poland">Poland</option>
@@ -68,20 +71,16 @@
                             <div class="form-group">
                                 <div class="col-md-6 form-rows">
                                     <label>City</label>
-                                    <input class="form-control" type="text" placeholder="Bucharest"/>
+                                    <input class="form-control" type="text" placeholder="Bucharest" ng-model="city" />
                                 </div>
                                 <div class="col-md-6">
                                     <label>Zip Code</label>
-                                    <input class="form-control" type="text" placeholder=""/>
+                                    <input class="form-control" type="text" placeholder="" ng-model="zipCode" />
                                 </div>
                                 <div class="col-md-6"></div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                            <!--  <button class="btn btn-orange pull-right">Update Totals</button> -->
-                            </div>
-                        </div>
+
                     </form>
                 </div>
             </div>
@@ -91,18 +90,24 @@
                     <tbody>
                         <tr class="card-subtotal">
                             <th>Cart Subtotal</th>
-                          <td>$ {{subTotal}}</td>
+                            <td>$ {{subTotal}}</td>
                         </tr>
                         <tr class="card-shipping">
                             <th>Shipping</th>
-                             <td> $ {{shipping}}</td>
+                            <td> $ {{shipping}}</td>
                         </tr>
                         <tr class="card-total">
                             <th>Order Total</th>
-                         <td class="price">${{total}}</td>
+                            <td class="price">${{total}}</td>
+
                         </tr>
                     </tbody>
                 </table>
+                <div class="row">
+                    <div class="col-md-12">
+                        <button class="btn btn-orange pull-right" ng-disabled="!cartList.length" ng-click="sendOrder()">Send Order</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
