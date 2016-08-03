@@ -2,10 +2,9 @@
 
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var ObjectId = mongoose.Schema.Types.ObjectId;
+//var ObjectId = mongoose.Schema.Types.ObjectId;
 
 //create a Schema
-
 var productSchema = new Schema({
 
     name: {
@@ -25,9 +24,22 @@ var productSchema = new Schema({
         default: " "
     },
     reviews: [{
-        type: ObjectId,
-        ref: " Review "
+        name: String,
+        text: String
     }],
+
+    onSale: {
+        type: Boolean
+    },
+    specifications: {
+        label: String,
+        value : String
+    },
+    pictures: [{
+        type: String,
+
+    }],
+
     created_at: Date,
     updated_at: Date
 
@@ -45,11 +57,11 @@ productSchema.pre('save', function(next) {
 
     this.updated_at = currentDate;
 
-    if  (!this.created_at)
-      {this.created_at = currentDate;
-}
+    if (!this.created_at) {
+        this.created_at = currentDate;
+    }
 
-  next();
+    next();
 });
 
 
