@@ -13,69 +13,51 @@ var Specfication = require('./models/specification.model');
 mongoose.connect('mongodb://localhost:27017/firstdatabase');
 var app = express();
 
-app.use(bodyParser.urlencoded({
-    extended: false
-}));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false
+}));
+
 
 
 
 //create product
-var newProduct = Product({
-    name: 'Amazing product',
-    price: '500',
-    description: ' very good, useful product',
-    picture: './images/products/product-1.jpg',
-    onSale: true,
-    pictures: [
-        "../assets/images/products/product-1.jpg",
-        "../assets/images/products/product-2.jpg",
-        "../assets/images/products/product-3.jpg",
-        "../assets/images/products/product-4.jpg",
-        "../assets/images/products/product-5.jpg",
-        "../assets/images/products/product-6.jpg"
-    ],
-
-});
-
-newProduct.save(function(err) {
-    if (err) throw err;
-
-    console.log('Product created ');
-});
-//create Review
-//  var newReview = Review ({
-//   name: "Ana",
-//   text: "Amazing product"
+// var newProduct = Product({
+//     name: 'Amazing product',
+//     price: '500',
+//     description: ' very good, useful product',
+//     picture: './images/products/product-1.jpg',
+//     onSale: true,
+//     pictures: [
+//         "../assets/images/products/product-1.jpg",
+//         "../assets/images/products/product-2.jpg",
+//         "../assets/images/products/product-3.jpg",
+//         "../assets/images/products/product-4.jpg",
+//         "../assets/images/products/product-5.jpg",
+//         "../assets/images/products/product-6.jpg"
+//     ],
+//
 // });
 //
-// newReview.save(function(err) {
+// newProduct.save(function(err) {
 //     if (err) throw err;
 //
-//     console.log('Review created ');
+//     console.log('Product created ');
+// });
 //
+//
+// //create specifications
+// var newSpecification = Specfication({
+//     label: "prop 1 1",
+//     value: "value 1 1"
+// });
+//
+// newSpecification.save(function(err) {
+//     if (err) throw err;
+//
+//     console.log('Specfication created ');
 // });
 
-//create specifications
-var newSpecification = Specfication({
-    label: "prop 1 1",
-    value: "value 1 1"
-});
-
-newSpecification.save(function(err) {
-    if (err) throw err;
-
-    console.log('Specfication created ');
-});
-
-
-app.get('/product', function(req, res) {
-    Product.find({}, function(err, products) {
-        if (err) throw err;
-        res.send(products);
-
-    })
-});
+//create product
 app.post('/product', function(req, res) {
 
     var newProduct = new Product(req.body);
@@ -87,28 +69,76 @@ app.post('/product', function(req, res) {
 
 });
 
-
-app.listen(3001, function() {
-    console.log('Ex app on port 3001');
+//get all products
+app.get('/product', function(req, res) {
+    Product.find({}, function(err, products) {
+        if (err) throw err;
+        res.send(products);
+    })
 });
+
+//get single product
 app.put('/product/:id', function(req, res) {
     Product.findById(req.params.id, function(err, product) {
         if (err) throw err;
 
-        console.log('Product finded by ID ');
+        console.log('Product finded by ID ' + product);
     })
 
 });
 
-
-app.delete('/product/:id', function(req, res) {
-    Product.findById(req.params.id, function(err, deletedProduct) {
+//update product
+app.put('/product/:id', function(req, res) {
+    console.log('Updating product id');
+    Product.findOneAndUpdate({
+        _id: req.params.id
+    }, {
+        $set: req.body
+    }, {
+        new: true
+    }, function(err, updatedProduct) {
         if (err) throw err;
-        console.log(product);
-        product.remove(function(err) {
-            if (err) throw err;
-            console.log('Product deleted');
-        })
-        res.send(deletedProduct);
+        res.send('Product updated ' + updatedProduct);
     });
 });
+
+
+
+//delete Product
+// app.delete('/product/:id', function(req, res) {
+//     Product.findById(req.params.id, function(err, deletedProduct) {
+//         if (err) throw err;
+//         console.log(product);
+//         product.remove(function(err) {
+//             if (err) throw err;
+//             console.log('Product deleted');
+//         })
+//         res.send(deletedProduct);
+//     });
+// });
+
+//review
+app.post('/product/:id/reviews', function(req, res) {
+
+            var id = req.params.id;
+            var review = req.body;
+            Review.create(review, function(err, reviewCreated) {
+                if (err) throw err;
+                console.log('My review' + reviewCreated);
+                Product.findById(id, function(err, product) {
+                    product.reviews.push(reviewCreated.id);
+                    product.save(function(err, updatedProd) {
+
+                        if (err) throw err;
+                        console.log('My product' + updatedProd);
+
+                        res.send(reviewCreated)
+                    })
+                })
+            })
+
+        }
+
+        app.listen(3001, function() {
+            console.log('Ex app on port 3001');
+        });

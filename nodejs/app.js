@@ -77,7 +77,18 @@ product.remove(function(err){
 });
 
 
-
+//create Review
+//  var newReview = Review ({
+//   name: "Ana",
+//   text: "Amazing product"
+// });
+//
+// newReview.save(function(err) {
+//     if (err) throw err;
+//
+//     console.log('Review created ');
+//
+// });
 
 app.get('/', function(req, res) {
     res.send('Hello, Node!');
